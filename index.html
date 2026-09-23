@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Landing page de estudio para la certificación Microsoft AB-620: AI Agent Builder Associate — Designing and Building Integrated AI Agent Solutions in Copilot Studio.">
+  <title>AB-620 · AI Agent Builder Associate · Guía de Estudio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <span class="brand-badge">AB-620</span>
+        <span class="brand-name">AI Agent Builder Associate</span>
+      </div>
+      <nav class="main-nav" aria-label="Navegación principal">
+        <a href="#estudio">Estudio</a>
+        <a href="#quiz">Quiz</a>
+        <a href="#recursos">Recursos</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenido">
+    <!-- HERO -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="container hero-inner">
+        <p class="hero-eyebrow">Certificación Microsoft · Copilot Studio</p>
+        <h1 id="hero-title">AB-620: AI Agent Builder Associate</h1>
+        <p class="hero-subtitle">
+          Designing and Building Integrated AI Agent Solutions in Copilot Studio.
+          Guía de estudio estructurada por dominios, con collapsibles temáticos y
+          30 preguntas de práctica con feedback inmediato.
+        </p>
+        <div class="hero-meta">
+          <span class="chip">3 dominios</span>
+          <span class="chip">30 preguntas</span>
+          <span class="chip">Nivel: Associate</span>
+          <span class="chip chip-green">ES · Español</span>
+        </div>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#estudio">Empezar a estudiar</a>
+          <a class="btn btn-outline" href="#quiz">Ir al quiz</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ESTUDIO / TABS -->
+    <section id="estudio" class="section" aria-labelledby="estudio-title">
+      <div class="container">
+        <h2 id="estudio-title">Dominios del examen</h2>
+        <p class="section-lead">Selecciona un dominio y despliega cada subsección para estudiar.</p>
+
+        <div class="tabs" role="tablist" aria-label="Dominios del examen AB-620">
+          <button class="tab is-active" role="tab" id="tab-d1" aria-selected="true" aria-controls="panel-d1" data-tab="1">
+            <span class="tab-num">Dominio 1</span>
+            <span class="tab-name">Plan and configure agent solutions</span>
+            <span class="tab-weight">~30%</span>
+          </button>
+          <button class="tab" role="tab" id="tab-d2" aria-selected="false" aria-controls="panel-d2" data-tab="2" tabindex="-1">
+            <span class="tab-num">Dominio 2</span>
+            <span class="tab-name">Integrate and extend agents</span>
+            <span class="tab-weight">~40%</span>
+          </button>
+          <button class="tab" role="tab" id="tab-d3" aria-selected="false" aria-controls="panel-d3" data-tab="3" tabindex="-1">
+            <span class="tab-num">Dominio 3</span>
+            <span class="tab-name">Test and manage agents</span>
+            <span class="tab-weight">~30%</span>
+          </button>
+        </div>
+
+        <!-- DOMINIO 1 -->
+        <div class="panel is-active" role="tabpanel" id="panel-d1" aria-labelledby="tab-d1" data-panel="1">
+          <div class="collapsibles">
+            <details class="collapsible" open>
+              <summary>Integración de sistemas empresariales</summary>
+              <div class="collapsible-body">
+                <ul>
+                  <li>Priorizar conectores existentes de Power Platform y APIs REST sobre sistemas expuestos (SAP, Dynamics, ERPs).</li>
+                  <li>Crear conectores personalizados solo cuando no exista alternativa; gobernarlos con soluciones y DLP.</li>
+                  <li>Evaluar latencia, límites de tasa, autenticación y contratos de datos antes de conectar.</li>
+                </ul>
+              </div>
+            </details>
+
+            <details class="collapsible">
+              <summary>Estrategia de identidad</summary>
+              <div class="collapsible-body">
+                <ul>
+                  <li>Microsoft Entra ID con autorización delegada (OAuth 2.0) para usuarios internos.</li>
+                  <li>Identidades externas: B2B/B2C o proveedores federados.</li>
+                  <li>Principio de mínimo privilegio: permisos de aplicación y de fila en Dataverse.</li>
+                </ul>
+              </div>
+            </details>
+
+            <details class="collapsible">
+              <summary>Canales y despliegue</summary>
+              <div class="collapsible-body">
+                <ul>
+                  <li>Canales nativos: Microsoft Teams, web, Microsoft 365 Copilot, Azure Communication Services.</li>
+                  <li>Publicación por ambiente: desarrollo → pruebas → producción mediante soluciones.</li>
+                  <li>Power Platform Pipelines para promoción controlada y auditoría de cambios.</li>
+                </ul>
+              </div>
+            </details>
+
+            <details class="collapsible">
+              <summary>IA responsable, seguridad y gobernanza</summary>
+              <div class="collapsible-body">
+                <ul>
+                  <li>Transparencia (avisar que es un bot), filtros de contenido y revisión humana en decisiones de alto impacto.</li>
+                  <li>Políticas DLP por tenant: agrupar, permitir o bloquear conectores.</li>
+                  <li>Auditoría, cumplimiento y guardrails contra prompt injection.</li>
+                </ul>
+              </div>
+            </details>
+
+            <details class="collapsible">
+              <summary>Componentes reutilizables y agent flows</summary>
+              <div class="collapsible-body">
+                <ul>
+                  <li>Empaquetar temas, acciones y conectores en soluciones compartidas.</li>
+                  <li><strong>Agent flows</strong> (Power Automate) para procesos deterministas: acciones, integraciones, lógica de negocio.</li>
+                  <li>Separación de responsabilidades: temas = conversación; flujos = ejecución.</li>
+                </ul>
+              </div>
+            </details>
+
+            <details class="collapsible">
+              <summary>Human-in-the-loop, acciones y manejo de errores</summary>
+              <div class="collapsible-body">
+                <ul>
+                  <li>HITL para aprobaciones, acciones irreversibles y baja confianza del modelo.</li>
+                  <li>Acciones con esquema tipado, autenticación y reutilización de conectores.</li>
+                  <li>Errores: reintentos limitados, mensajes claros, escalamiento humano y telemetría.</li>
+                </ul>
+              </div>
+            </details>
+
+            <details class="collapsible">
+              <summary>Topics y adaptive cards</summary>
+              <div class="collapsible-body">
+                <ul>
+                  <li>Topics definen el enrutamiento de conversación (triggers, condiciones, nodos).</li>
+                  <li>Adaptive cards: tarjetas JSON interactivas (texto, imágenes, acciones) por canal.</li>
+                  <li>Combinar cards con validación de entradas y acciones del agente.</li>
+                </ul>
+              </div>
+            </details>
+          </div>
+        </div>
+
+        <!-- DOMINIO 2 -->
+        <div class="panel" role="tabpanel" id="panel-d2" aria-labelledby="tab-d2" data-panel="2" hidden>
+          <div class="collapsibles">
+            <details class="collapsible" open>
+              <summary>Fuentes de conocimiento empresarial</summary>
+              <div class="collapsible-body">
+                <ul>
+                  <li><strong>Copilot connectors / knowledge sources</strong>: recuperación RAG sobre fuentes empresariales.</li>
+                  <li><strong>Power Platform / Dataverse</strong>: datos estructurados con permisos de fila y DLP.</li>
+                  <li><strong>Azure AI Search</strong>: búsqueda híbrida (vectorial + texto), filtrados y citas.</li>
+                </ul>
+              </div>
+            </details>
+
+            <details class="collapsible">
+              <summary>Herramientas (tools) del agente</summary>
+              <div class="collapsible-body">
+                <ul>
+                  <li><strong>Computer use</strong>: último recurso para apps legacy sin API (interacción visual con GUI).</li>
+                  <li><strong>MCP tools</strong>: estándar abierto para descubrir e invocar herramientas de forma homogénea.</li>
+                  <li><strong>Custom connectors</strong>: contratos tipados, autenticación, políticas y ALM.</li>
+                  <li><strong>REST APIs</strong>: acciones genéricas con manejo de errores y versionado.</li>
+                </ul>
+              </div>
+            </details>
+
+            <details class="collapsible">
+              <summary>Colaboración multi-agente</summary>
+              <div class="collapsible-body">
+                <ul>
+                  <li><strong>A2A protocol</strong>: descubrimiento (Agent Card), intercambio de tareas y agregación de resultados.</li>
+                  <li><strong>Foundry agents</strong>: agentes de Azure AI Foundry invocados como herramienta externa.</li>
+                  <li><strong>Fabric agents</strong>: análisis y acciones sobre activos de Fabric (Power BI, Lakehouse, notebooks).</li>
+                </ul>
+              </div>
+            </details>
+
+            <details class="collapsible">
+              <summary>Integración con Azure</summary>
+              <div class="collapsible-body">
+                <ul>
+                  <li>Azure AI Search (RAG), Azure OpenAI (modelos y evaluaciones), Azure Functions (lógica serverless).</li>
+                  <li>Azure Key Vault para secretos: rotación, RBAC y auditoría.</li>
+                  <li>Application Insights: latencia, fallos de acciones, traces de conversación y SLO.</li>
+                </ul>
+              </div>
+            </details>
+          </div>
+        </div>
+
+        <!-- DOMINIO 3 -->
+        <div class="panel" role="tabpanel" id="panel-d3" aria-labelledby="tab-d3" data-panel="3" hidden>
+          <div class="collapsibles">
+            <details class="collapsible" open>
+              <summary>Métodos de evaluación</summary>
+              <div class="collapsible-body">
+                <ul>
+                  <li>Evaluaciones automatizadas: ground truth, calidad de respuesta, seguridad/jailbreak.</li>
+                  <li>Pruebas manuales de flujos críticos y pruebas de carga/latencia.</li>
+                  <li>Iterar con telemetría real (Application Insights) para detectar brechas.</li>
+                </ul>
+              </div>
+            </details>
+
+            <details class="collapsible">
+              <summary>Test sets</summary>
+              <div class="collapsible-body">
+                <ul>
+                  <li>Conjuntos curados de entradas con resultados esperados y criterios de puntuación.</li>
+                  <li>Ejecutar en cada cambio para detectar regresiones de calidad.</li>
+                  <li>Incluir casos negativos y de seguridad además de los casos felices.</li>
+                </ul>
+              </div>
+            </details>
+
+            <details class="collapsible">
+              <summary>ALM y Power Platform Pipelines</summary>
+              <div class="collapsible-body">
+                <ul>
+                  <li>Empaquetar el agente en soluciones y promover entre ambientes con Pipelines.</li>
+                  <li>Revisiones, aprobaciones y trazabilidad de despliegues.</li>
+                  <li>Estrategia de rollback ante incidencias en producción.</li>
+                </ul>
+              </div>
+            </details>
+
+            <details class="collapsible">
+              <summary>Variables de entorno y soluciones</summary>
+              <div class="collapsible-body">
+                <ul>
+                  <li>Externalizar URLs, IDs y flags por ambiente en <em>environment variables</em>.</li>
+                  <li>Soluciones: versionado e integración de componentes del agente.</li>
+                  <li>Separar configuración de lógica para despliegues seguros.</li>
+                </ul>
+              </div>
+            </details>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- QUIZ -->
+    <section id="quiz" class="section section-alt" aria-labelledby="quiz-title">
+      <div class="container">
+        <h2 id="quiz-title">Quiz de práctica · 30 preguntas</h2>
+        <p class="section-lead">Selecciona una opción por pregunta, envía y revisa la explicación de cada respuesta.</p>
+
+        <div class="quiz-controls">
+          <div class="quiz-filters" role="group" aria-label="Filtrar preguntas por dominio">
+            <button class="chip-btn is-active" data-filter="all">Todos</button>
+            <button class="chip-btn" data-filter="1">Dominio 1</button>
+            <button class="chip-btn" data-filter="2">Dominio 2</button>
+            <button class="chip-btn" data-filter="3">Dominio 3</button>
+          </div>
+          <div class="quiz-actions">
+            <span class="quiz-score" id="quiz-score" aria-live="polite">0 / 0 correctas</span>
+            <button class="btn btn-outline btn-sm" id="btn-reset" type="button">Reiniciar</button>
+          </div>
+        </div>
+
+        <p class="quiz-status" id="quiz-status" role="status">Cargando preguntas…</p>
+        <ol class="quiz-list" id="quiz-list"></ol>
+      </div>
+    </section>
+
+    <!-- RECURSOS -->
+    <section id="recursos" class="section" aria-labelledby="recursos-title">
+      <div class="container">
+        <h2 id="recursos-title">Recursos recomendados</h2>
+        <div class="cards">
+          <article class="card">
+            <h3>Microsoft Learn</h3>
+            <p>Ruta de estudio oficial de Copilot Studio y diseño de agentes integrados.</p>
+          </article>
+          <article class="card">
+            <h3>Documentación de Power Platform ALM</h3>
+            <p>Soluciones, variables de entorno y Power Platform Pipelines.</p>
+          </article>
+          <article class="card">
+            <h3>Práctica</h3>
+            <p>Repasa el quiz, revisa las explicaciones y reintentar los ítems fallados.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>Guía de estudio no oficial · AB-620 AI Agent Builder Associate · Contenido en español para práctica.</p>
+    </div>
+  </footer>
+
+  <button class="to-top" id="to-top" type="button" aria-label="Volver arriba" hidden>↑</button>
+
+  <script src="script.js"></script>
+</body>
+</html>

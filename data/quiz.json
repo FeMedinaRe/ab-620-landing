@@ -1,0 +1,396 @@
+{
+  "certification": "AB-620",
+  "title": "AI Agent Builder Associate",
+  "questions": [
+    {
+      "id": 1,
+      "domain": 1,
+      "question": "Al diseñar la integración de un agente de Copilot Studio con sistemas empresariales heredados (SAP, mainframe), ¿qué enfoque se recomienda como primera opción?",
+      "options": [
+        "Desarrollar un conector personalizado desde cero usando la API REST de cada sistema",
+        "Usar conectores existentes de Power Platform o crear acciones sobre APIs expuestas, evaluando antes la gobernanza",
+        "Exportar periódicamente los datos a un almacén y usar búsqueda semántica",
+        "Limitar el agente a datos internos de Dynamics 365"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Lo recomendable es reutilizar conectores existentes de Power Platform o invocar APIs REST ya expuestas por el sistema empresarial, siempre evaluando permisos, gobernanza y límites de datos antes de conectar el agente. Desarrollar conectores personalizados desde cero o copias de datos añaden coste y riesgo innecesarios."
+    },
+    {
+      "id": 2,
+      "domain": 1,
+      "question": "¿Qué estrategia de identidad es la más adecuada para un agente de Copilot Studio que usará tanto empleados internos como usuarios externos?",
+      "options": [
+        "Autenticación anónima para simplificar el acceso externo",
+        "Un único servicio principal compartido entre todos los usuarios",
+        "Microsoft Entra ID con autorización delegada y diferenciación de identidades internas/externas",
+        "Deshabilitar la autenticación y confiar en las políticas del canal"
+      ],
+      "correctAnswer": 2,
+      "explanation": "La estrategia correcta combina Microsoft Entra ID con autorización delegada (OAuth 2.0), distinguiendo entre usuarios internos (Entra ID) y externos (identidades federadas o B2C). Esto permite aplicar permisos granulares por usuario, auditoría y cumplimiento de gobernanza."
+    },
+    {
+      "id": 3,
+      "domain": 1,
+      "question": "¿Cuál de los siguientes NO es un canal de publicación soportado nativamente por Copilot Studio?",
+      "options": [
+        "Microsoft Teams",
+        "Sitios web personalizados mediante el SDK de la página web",
+        "Canales de Microsoft Azure Communication Services",
+        "Aplicación móvil nativa propia de Copilot Studio"
+      ],
+      "correctAnswer": 3,
+      "explanation": "Copilot Studio publica en canales como Teams, sitios web, Microsoft 365 Copilot, canales de Azure Communication Services y otros. No existe una app móvil nativa propia de Copilot Studio; para móvil se usa el canal web embebido u otra app que consuma el agente."
+    },
+    {
+      "id": 4,
+      "domain": 1,
+      "question": "¿Cuál es el primer paso recomendado para desplegar un agente de Copilot Studio de desarrollo a producción de forma controlada?",
+      "options": [
+        "Exportar el agente como archivo .copilot y editarlo manualmente con un editor de texto",
+        "Publicarlo directamente en el canal de producción sin pruebas",
+        "Usar soluciones de Power Platform para empaquetar, promover a través de ambientes y aplicar ALM",
+        "Crear un duplicado del agente desde cero en el ambiente de producción"
+      ],
+      "correctAnswer": 2,
+      "explanation": "El patrón de ALM recomendado consiste en empaquetar el agente dentro de una solución de Power Platform, promoverla entre ambientes (desarrollo → pruebas → producción) y usar Power Platform Pipelines. Exportar/editar manualmente o duplicar el agente pierde trazabilidad y dificulta las actualizaciones."
+    },
+    {
+      "id": 5,
+      "domain": 1,
+      "question": "Respecto a IA responsable aplicada a agentes, ¿qué acción demuestra mayor cumplimiento de los principios de Microsoft?",
+      "options": [
+        "Ocultar que el usuario está interactuando con una IA",
+        "Mostrar contenido generado por IA sin revisión humana en decisiones críticas",
+        "Incluir avisos de que es un bot, filtros de contenido y revisión humana en decisiones de alto impacto",
+        "Permitir que el agente tome decisiones financieras finales sin supervisión"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Los principios de IA responsable exigen transparencia (avisar de que es un IA), fiabilidad y seguridad (filtros de contenido, pruebas), inclusión y supervisión humana (human-in-the-loop) cuando hay decisiones de alto impacto. Ocultar la naturaleza de la IA o eliminar la revisión humana viola estos principios."
+    },
+    {
+      "id": 6,
+      "domain": 1,
+      "question": "¿Qué mecanismo de seguridad y gobernanza permite restringir qué datos puede consultar un agente en Power Platform?",
+      "options": [
+        "Únicamente el cifrado en reposo del Dataverse",
+        "Políticas DLP (prevención de pérdida de datos) por tenant y por conector, junto con permisos de fila en Dataverse",
+        "Cambiar la contraseña del agente con frecuencia",
+        "Deshabilitar todos los conectores y usar solo texto fijo"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Las políticas DLP de Power Platform controlan qué conectores puede usar el agente (bloquear, permitir o combinar en grupos de conectores), y los permisos a nivel de fila/fila de Dataverse limitan los datos accesibles. Cifrado y contraseñas son medidas complementarias, no de autorización lógica."
+    },
+    {
+      "id": 7,
+      "domain": 1,
+      "question": "¿Por qué conviene crear componentes reutilizables (acciones, temas y conectores personalizados) en una solución compartida?",
+      "options": [
+        "Para reducir el tamaño del archivo de exportación",
+        "Para estandarizar comportamientos, aplicar gobernanza centralizada y acelerar el desarrollo de nuevos agentes",
+        "Porque Copilot Studio no permite crear componentes dentro de un agente",
+        "Para evitar la necesidad de pruebas en cada agente"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Los componentes reutilizables dentro de soluciones permiten estandarizar flujos, concentrar la gobernanza (DLP, versiones), aplicar correcciones una sola vez y acelerar la creación de nuevos agentes. No eliminan la necesidad de pruebas ni reducen por sí solos el tamaño de exportación."
+    },
+    {
+      "id": 8,
+      "domain": 1,
+      "question": "En Copilot Studio, los 'agent flows' (flujos de agente) son útiles principalmente para:",
+      "options": [
+        "Diseñar la conversación visual mediante nodos de diálogo",
+        "Ejecutar procesos deterministas basados en acciones, integraciones y lógica de negocio sobre sistemas externos",
+        "Reemplazar por completo a los temas de conversación",
+        "Almacenar los datos del usuario en el navegador"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Los agent flows (basados en Power Automate) ejecutan pasos deterministas: llamar APIs, escribir en Dataverse, ramificar lógica, manejar errores. Los temas se encargan de la conversación libre; ambos se combinan, pero los flujos son para procesos estructurados y acciones sobre sistemas externos."
+    },
+    {
+      "id": 9,
+      "domain": 1,
+      "question": "¿Cuándo es apropiado aplicar un patrón de human-in-the-loop (HITL) en un agente?",
+      "options": [
+        "Solo cuando el sistema falla técnicamente",
+        "En decisiones de alto riesgo, aprobaciones o cuando la confianza del modelo es baja",
+        "Nunca, porque el agente debe resolver todo automáticamente",
+        "Únicamente en el canal de Teams"
+      ],
+      "correctAnswer": 1,
+      "explanation": "El patrón HITL se aplica cuando hay decisiones de alto impacto (aprobaciones, acciones irreversibles, contenido regulado) o cuando la confianza del modelo es baja. El agente escala la conversación a un humano o solicita aprobación antes de continuar. Limitarlo a un canal o fallos técnicos es incorrecto."
+    },
+    {
+      "id": 10,
+      "domain": 1,
+      "question": "¿Cuál es la mejor práctica al definir acciones (actions) y conectores en un agente?",
+      "options": [
+        "Crear una acción por cada endpoint del sistema, aunque se repita la lógica",
+        "Definir acciones con autenticación clara, esquema de entrada/salida tipado y manejo de errores, reutilizando conectores existentes cuando sea posible",
+        "Usar siempre solicitudes HTTP genéricas sin autenticación para mayor flexibilidad",
+        "Evitar acciones porque aumentan el coste del agente"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Las acciones deben tener contratos bien definidos (esquema de entrada/salida), autenticación adecuada (Entra ID, OAuth, claves gestionadas) y manejo de errores. Reutilizar conectores existentes reduce mantenimiento; las HTTP genéricas sin autenticación rompen la seguridad y no escalan."
+    },
+    {
+      "id": 11,
+      "domain": 1,
+      "question": "¿Cómo debe manejar un agente un error en una acción que consulta un sistema externo?",
+      "options": [
+        "Terminar la conversación inmediatamente sin informar al usuario",
+        "Reintentar indefinidamente hasta que funcione",
+        "Capturar el error, informar al usuario de forma clara, ofrecer alternativas (reintentar, escalar a humano) y registrar el error para diagnóstico",
+        "Ocultar el error y devolver una respuesta inventada"
+      ],
+      "correctAnswer": 2,
+      "explanation": "El manejo de errores debe combinar: reintentos limitados con retroceso exponencial, mensajes amigables al usuario, opción de escalar a un humano y telemetría (Application Insights) para diagnóstico. Ocultar errores o inventar respuestas rompe la confianza; reintentar indefinidamente satura el sistema."
+    },
+    {
+      "id": 12,
+      "domain": 1,
+      "question": "¿Cuál es la función principal de las adaptive cards en un agente de Copilot Studio?",
+      "options": [
+        "Definir la lógica de enrutamiento de conversación",
+        "Mostrar tarjetas interactivas estructuradas con texto, imágenes y acciones (botones, formularios) para mejorar la experiencia en el canal",
+        "Almacenar el historial de conversación del usuario",
+        "Configurar las políticas DLP del tenant"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Las adaptive cards son tarjetas JSON multiplataforma que presentan información estructurada y elementos interactivos (acciones, entradas) de forma nativa en Teams, web y otros canales. No definen lógica de enrutamiento (eso son los temas), ni almacenan historial, ni configuran gobernanza."
+    },
+    {
+      "id": 13,
+      "domain": 2,
+      "question": "¿Cuál es la diferencia principal entre usar un 'Copilot connector' (conector de conocimiento) y una acción sobre una API REST en un agente?",
+      "options": [
+        "Los conectores de conocimiento solo funcionan en Teams",
+        "Los conectores de conocimiento aportan recuperación RAG sobre fuentes empresariales; las acciones ejecutan operaciones transaccionales sobre sistemas",
+        "No hay diferencia, son nombres distintos para lo mismo",
+        "Las acciones no pueden autenticarse contra sistemas externos"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Los conectores de conocimiento (Copilot connectors / agents en Microsoft 365) indexan y recuperan información con búsqueda semántica (RAG) para responder preguntas. Las acciones ejecutan operaciones concretas (crear, actualizar, eliminar) contra APIs/ERP/CRM. Combinar ambos cubre conocimiento y operaciones."
+    },
+    {
+      "id": 14,
+      "domain": 2,
+      "question": "Para conectar un agente a datos estructurados con acceso controlado en Power Platform/Dataverse, ¿qué opción es la más adecuada?",
+      "options": [
+        "Copiar los datos a un archivo CSV y subirlo al agente",
+        "Usar acciones sobre Dataverse/Power Apps respetando permisos de fila y políticas DLP",
+        "Deshabilitar los permisos de seguridad de Dataverse para simplificar el acceso",
+        "Publicar los datos en un sitio web público y usar scraping"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Lo correcto es consultar Dataverse mediante acciones o conectores de Power Platform, heredando los permisos de fila del usuario final y respetando las políticas DLP. Copiar datos a CSV genera copias desactualizadas, deshabilitar permisos rompe la seguridad y el scraping es frágil e inseguro."
+    },
+    {
+      "id": 15,
+      "domain": 2,
+      "question": "¿Qué permite Azure AI Search cuando se integra con un agente de Copilot Studio?",
+      "options": [
+        "Ejecutar flujos de Power Automate en la nube",
+        "Aportar búsqueda híbrida (vectorial + de texto) y recuperación RAG sobre grandes volúmenes de documentos indexados",
+        "Sustituir la autenticación del usuario final",
+        "Hospedar el frontend web del canal de conversación"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Azure AI Search indexa documentos con embeddings y metadatos, y ofrece búsqueda híbrida (semántica/vectorial + léxica) con filtrados, lo que permite RAG de calidad sobre corpus grandes. No ejecuta flujos, no autentica usuarios ni hospeda el canal web."
+    },
+    {
+      "id": 16,
+      "domain": 2,
+      "question": "¿Cuándo es recomendable habilitar el 'computer use' (uso de ordenador) en un agente?",
+      "options": [
+        "Como método principal para todas las tareas, por ser más moderno",
+        "Solo cuando no exista API ni interfaz programática para la aplicación legacy y sea imprescindible automatizar la interacción visual",
+        "Para acceder a bases de datos relacionales",
+        "Para reemplazar la autenticación multifactor"
+      ],
+      "correctAnswer": 1,
+      "explanation": "El computer use (interacción con GUI: clics, escritura en pantalla) es un enfoque de último recurso para aplicaciones legacy sin API. Debe precederse el uso de APIs/conectores por ser más fiable, rápido, seguro y auditable. Para datos relacionales existen conectores y acciones nativas."
+    },
+    {
+      "id": 17,
+      "domain": 2,
+      "question": "¿Qué es el protocolo MCP (Model Context Protocol) en el contexto de las herramientas de agentes?",
+      "options": [
+        "Un protocolo de mensajería cifrada entre usuarios finales",
+        "Un estándar abierto que define cómo los agentes descubcen e invocan herramientas y recursos de forma homogénea",
+        "Un formato de archivo para exportar soluciones de Power Platform",
+        "Un algoritmo de compresión de tokens para reducir costes"
+      ],
+      "correctAnswer": 1,
+      "explanation": "MCP estandariza la forma en que un cliente de IA descubre y llama a herramientas/recursos externos (servicios, APIs, archivos) mediante servidores MCP, evitando integraciones ad-hoc. No es mensajería entre usuarios, ni formato de solución, ni algoritmo de compresión."
+    },
+    {
+      "id": 18,
+      "domain": 2,
+      "question": "¿Qué ventaja ofrece un conector personalizado (custom connector) frente a una solicitud HTTP genérica desde un agente?",
+      "options": [
+        "No requiere autenticación",
+        "Expone una interfaz tipada y reutilizable con autenticación y políticas, integrada con ALM y DLP de Power Platform",
+        "Permite ejecutar código arbitrario en el navegador del usuario",
+        "Evita necesidad de documentación"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Un custom connector empaqueta una API con contrato tipado (operaciones, esquemas), autenticación (OAuth, API key, Entra ID), políticas de conexión y soporte de soluciones/DLP. Es reutilizable y gobernable; la HTTP genérica carece de tipado, gobierno y reutilización centralizada."
+    },
+    {
+      "id": 19,
+      "domain": 2,
+      "question": "¿Qué define el protocolo A2A (Agent-to-Agent) en arquitecturas multi-agente?",
+      "options": [
+        "El formato de las adaptive cards en Teams",
+        "Un marco de interoperabilidad para que agentes de distintos orígenes se descubran, negocien capacidades y colaboren en tareas",
+        "Un estándar de cifrado de datos en reposo",
+        "Una política DLP de Power Platform"
+      ],
+      "correctAnswer": 1,
+      "explanation": "A2A permite que agentes independientes (distintos frameworks, vendors o dominios) se descubran (Agent Card), intercambien mensajes y deleguen subtareas de forma interoperable. No es formato de tarjetas, cifrado ni una política DLP."
+    },
+    {
+      "id": 20,
+      "domain": 2,
+      "question": "¿En qué se diferencian los 'Foundry agents' respecto a los agentes de Copilot Studio al integrarlos en una solución?",
+      "options": [
+        "Foundry agents son agentes de Azure AI Foundry construidos con modelos/SDK propios, que Copilot Studio puede invocar como herramienta o servicio externo",
+        "Son exactamente lo mismo con otro nombre",
+        "Foundry agents solo funcionan sin conexión",
+        "Foundry agents reemplazan obligatoriamente los canales de Power Platform"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Azure AI Foundry permite construir agentes con modelos, prompts y código propios (SDK/Agent Framework); Copilot Studio puede integrarlos como herramientas/servicios invocados. No son idénticos ni dependen de funcionar sin conexión ni sustituyen canales."
+    },
+    {
+      "id": 21,
+      "domain": 2,
+      "question": "¿Qué es un 'agente de Microsoft Fabric' (Fabric agent) y cómo se integra?",
+      "options": [
+        "Un agente que solo visualiza informes en Power BI sin acciones",
+        "Un agente asociado a activos de Fabric (datos, informes, notebooks) que expone capacidades de análisis y acciones sobre esos activos para otros agentes/aplicaciones",
+        "Un reemplazo del canal de Teams",
+        "Una política de seguridad de almacenes de datos"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Los agentes de Fabric aprovechan datos y elementos de Fabric (Power BI, notebooks,Lakehouse) para analizar y ejecutar acciones sobre esos activos, pudiendo ser consumidos en escenarios multi-agente (p. ej. vía A2A o herramientas). No se limitan a visualizar ni sustituyen canales."
+    },
+    {
+      "id": 22,
+      "domain": 2,
+      "question": "¿Qué servicios de Azure se usan habitualmente para complementar un agente de Copilot Studio en escenarios avanzados?",
+      "options": [
+        "Solo Azure Storage para archivos estáticos",
+        "Azure AI Search, Azure OpenAI, Azure Functions, Application Insights y Azure Key Vault",
+        "Únicamente Azure DevOps Server on-premises",
+        "Azure no puede integrarse con Copilot Studio"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Integraciones típicas: Azure AI Search (RAG), Azure OpenAI (modelos/evaluaciones), Azure Functions (lógica serverless), Application Insights (telemetría) y Key Vault (secretos). Copilot Studio sí se integra con servicios Azure; limitarlo a Storage o DevOps es incorrecto."
+    },
+    {
+      "id": 23,
+      "domain": 2,
+      "question": "¿Qué información clave proporciona Application Insights al operar un agente de Copilot Studio?",
+      "options": [
+        "Solo el número total de usuarios registrados en el tenant",
+        "Telemetría de solicitudes, latencia, fallos de acciones/conexiones, traces de conversación y métricas de uso para diagnóstico y SLO",
+        "El código fuente de los temas del agente",
+        "Las contraseñas usadas por los conectores"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Application Insights recolecta traces, métricas (latencia, volumen), excepciones/failed requests de acciones y dependencias, permitiendo detectar fallos, analizar conversaciones y medir cumplimiento de SLO. No expone credenciales ni es repositorio de código fuente de temas."
+    },
+    {
+      "id": 24,
+      "domain": 2,
+      "question": "Un agente necesita invocar una API interna que cambia frecuentemente de versión. ¿Qué práctica de integración es más robusta?",
+      "options": [
+        "Hardcodear la URL y el payload en cada tema",
+        "Crear una acción/conector con un contrato estable, versionado y documentado, ocultando los cambios tras una fachada",
+        "Duplicar la lógica de llamada en todos los temas",
+        "Usar URLs sin versión para que siempre devuelva lo último"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Una fachada estable (acción/conector con contrato versionado y documentado) aísla los temas de los cambios de la API, centraliza autenticación, reintentos y telemetría, y simplifica el mantenimiento. Hardcodear o duplicar lógica propaga el cambio a todo el agente."
+    },
+    {
+      "id": 25,
+      "domain": 2,
+      "question": "En un escenario multi-agente donde un agente de front-line delega en un agente especialista, ¿qué patrón es más alineado con A2A?",
+      "options": [
+        "Compartir la misma sesión de usuario y clave de API entre ambos agentes",
+        "Que el agente descubra la capacidad del especialista mediante un Agent Card, le envíe la tarea con contexto y agregue su resultado antes de responder",
+        "Que el agente especialista escriba directamente en la base de datos sin permisos",
+        "Duplicar el conocimiento del especialista en el agente de front-line"
+      ],
+      "correctAnswer": 1,
+      "explanation": "El patrón A2A consiste en descubrimiento de capacidades (Agent Card), intercambio de mensajes/tareas con contexto y agregación de resultados. Compartir credenciales viola seguridad; escribir sin permisos es inseguro; duplicar conocimiento introduce desincronización."
+    },
+    {
+      "id": 26,
+      "domain": 2,
+      "question": "¿Por qué conviene gestionar secretos (API keys, tokens) de integraciones en Azure Key Vault en lugar de incluirlos en la configuración del agente?",
+      "options": [
+        "Porque Key Vault es más rápido que la red",
+        "Para centralizar rotación, control de acceso, auditoría y evitar la exposición de credenciales en configuración o código",
+        "Porque Copilot Studio solo admite contraseñas en texto plano",
+        "Para reducir el coste de las llamadas a la API"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Key Vault centraliza el almacenamiento seguro de secretos con control de acceso RBAC, rotación, versionado y auditoría, evitando que las credenciales queden embebidas en temas, flujos o archivos exportados. La latencia o el coste de API no son la motivación, y no se exige texto plano."
+    },
+    {
+      "id": 27,
+      "domain": 3,
+      "question": "¿Cómo se evalúa la calidad de las respuestas generadas por un agente que usa búsqueda sobre una fuente de conocimiento (RAG)?",
+      "options": [
+        "Confiando en las impresiones subjetivas del equipo de desarrollo",
+        "Con test sets que comparan la respuesta contra una respuesta de referencia (ground truth) y métricas de relevancia, exactitud y citas, además de pruebas manuales",
+        "Contando el número de documentos indexados en la fuente",
+        "Midiendo únicamente el tiempo de carga del canal web"
+      ],
+      "correctAnswer": 1,
+      "explanation": "La evaluación RAG se basa en test sets con respuestas de referencia y métricas automáticas (relevancia, exactitud/ground truth, presencia de citas correctas), complementadas por revisión manual de casos críticos. Las impresiones subjetivas, el recuento de documentos o la latencia del canal no miden la calidad de la respuesta."
+    },
+    {
+      "id": 28,
+      "domain": 3,
+      "question": "¿Cuáles son métodos de evaluación recomendados para un agente antes de su puesta en producción?",
+      "options": [
+        "Probar únicamente con el desarrollador que lo creó",
+        "Evaluaciones automatizadas (respuestas ground truth, calidad de respuesta, seguridad/jailbreak), pruebas manuales de escenarios y pruebas de carga",
+        "Verificar solo que la página web carga",
+        "Contar el número de temas sin ejecutarlos"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Una evaluación completa combina suites automatizadas (exactitud/ground truth, calidad de respuesta, detección de prompt injection/jailbreak y seguridad), pruebas manuales de flujos críticos y pruebas de carga/latencia. Probar solo a mano o contar temas no valida el comportamiento real."
+    },
+    {
+      "id": 29,
+      "domain": 3,
+      "question": "¿Qué es un 'test set' (conjunto de pruebas) en el ciclo de vida de un agente?",
+      "options": [
+        "Una copia de seguridad del agente en producción",
+        "Un conjunto curado de entradas de usuario con resultados esperados, usado para evaluar regresiones de calidad de forma repetible",
+        "Una lista de usuarios autorizados a usar el agente",
+        "Un archivo de configuración DLP del tenant"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Un test set agrupa pares entrada → salida esperada (y a veces criterios de puntuación) para ejecutar evaluaciones repetibles en cada cambio y detectar regresiones. No es una copia de seguridad, una lista de usuarios ni una política DLP."
+    },
+    {
+      "id": 30,
+      "domain": 3,
+      "question": "¿Qué papel juegan las 'environment variables' (variables de entorno) y las soluciones en el ALM de un agente?",
+      "options": [
+        "Sirven para personalizar la interfaz gráfica del canal web",
+        "Permiten parametrizar configuraciones (URLs, IDs, flags) por ambiente y empaquetar componentes versionados para promover entre entornos",
+        "Reemplazan la necesidad de probar en preproducción",
+        "Almacenan las conversaciones históricas de los usuarios"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Las variables de entorno externalizan configuraciones que cambian por ambiente (p. ej. URL de API en dev vs prod), y las soluciones empaquetan y versionan componentes para promoción controlada (idealmente con Power Platform Pipelines). No son para UI ni sustituyen las pruebas ni guardan historiales."
+    }
+  ]
+}
